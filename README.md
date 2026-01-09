@@ -106,7 +106,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   - punt 1
   - punt 2
-  - nog een punt
+  - nog een puntjes
   - ...
 
 </details>
