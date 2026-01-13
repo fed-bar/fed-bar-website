@@ -27,5 +27,44 @@
 /* JOUW STYLING */
 /****************/
 
-/* jouw code */
+/* font via Adbobe Fonts */
+Legitima
+font-family: "legitima", serif;
+font-weight: 500;
+font-style: normal;
 
+font-family: "legitima", serif;
+font-weight: 500;
+font-style: italic;
+
+Riant Display
+h1{ font-family: "riant-display", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: "riant-display", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+font-family: "riant-display-inline", sans-serif;
+font-weight: 400;
+font-style: normal;}
+
+Comma Sans
+font-family: "comma-sans", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+font-family: "comma-sans", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: "comma-sans", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+font-family: "comma-sans", sans-serif;
+font-weight: 900;
+font-style: normal;
+
+/* Wat nu */
