@@ -4,9 +4,31 @@
 *, *::after, *::before {
   box-sizing:border-box;  
 }
+h1{
+  font-family: riant-display;
+  font-size: 5em;
+  color: rgb(149, 86, 97);
+  letter-spacing: 0.1em;
+  margin-left: 80px;}
 
+  h2{
+  font-family: legitima;
+  font-weight: 400;
+  font-size: 2em;
+  color: rgb(149, 86, 97);
+  letter-spacing: 2%;
+  margin-left: 80px;}
 
+  p{
+  font-family: comma-sans;
+  font-size: 1em;
+  color: rgb(149, 86, 97);
+  letter-spacing: 0.1em;
+  margin-left: 80px;
+  background-color: pink;
+  padding: 20px;
 
+}
 
 
 
@@ -28,6 +50,7 @@
 /****************/
 
 /* font via Adbobe Fonts */
+/*
 Legitima
 font-family: "legitima", serif;
 font-weight: 500;
@@ -36,9 +59,9 @@ font-style: normal;
 font-family: "legitima", serif;
 font-weight: 500;
 font-style: italic;
-
+  
 Riant Display
-h1{ font-family: "riant-display", sans-serif;
+font-family: "riant-display", sans-serif;
 font-weight: 400;
 font-style: normal;
 
@@ -66,5 +89,5 @@ font-style: normal;
 font-family: "comma-sans", sans-serif;
 font-weight: 900;
 font-style: normal;
-
+*/
 /* Wat nu */
