@@ -37,14 +37,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je opdracht:
   link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
+https://w139.nl/
+W139 is een toonaangevende productie- en presentatieruimte voor hedendaagse kunst. Ik zie mogelijkheden om deze website als een eigen portfolio website te zien, om iets uit te lichten of iets op een agenda te zetten. 
+
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/w139_start.png" width="375px" alt="startpagina van website w139">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  hier de naam van de pagina: https://w139.nl/
+  <img src="readme-images/w139_detailpag.png" width="375px" alt="detailpagina portfolio onderdeel">
  
 </details>
 
@@ -54,9 +57,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 <details>
   <summary>uitwerken na test in 2<sup>e</sup> werkgroep</summary>
-
+Ik kan de voiceover screenreader niet goed bedienen. Het lijkt erop dat er helemaal geen goede opzet of connectie is gemaakt, nergensover nagedacht is?!?!
+IK KOM ER IN IEDERGEVAL HELEMAAL NIET UIT....
+  
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  - Make sure that button, a, and label element content is unique and descriptive.
+  Ik zie 'Lees meer' linkjes
+  - Images: hebben een foute alt tekst... die niks zegt over de inhoud die je ziet op de afbeelding.
+  - Check van de 'Source/ Outline/ Images'. Ik zie heel veel de melding: Trailing slash on void elements has no effect and interacts badly with unquoted attribute values.
+  - Errors: veel ongeldige 'atributes' in 'elementen' gebruikt... die vaak te maken hebben met een ahref en een <a>
+  - Errors: Section lacks heading. Consider using h2-h6.
+  - landmarkregions: zijn niet te herkennen voor mij. De html is niet semantisch opgesteld zoals, 'nav' te onderscheiden van 'main'
+  - 
 
 </details>
 
