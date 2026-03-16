@@ -1,34 +1,141 @@
 /**************/
 /* CSS REMEDY */
 /**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
-}
-h1{
-  font-family: riant-display;
-  font-size: 5em;
-  color: rgb(149, 86, 97);
-  letter-spacing: 0.1em;
-  margin-left: 80px;}
 
-  h2{
-  font-family: legitima;
+
+@font-face {
+  font-family: "xxxx";
+  src: url(../fonts/xxxxxxx);
   font-weight: 400;
-  font-size: 2em;
-  color: rgb(149, 86, 97);
-  letter-spacing: 2%;
-  margin-left: 80px;}
+}
 
-  p{
+@font-face {
+  font-family: "xxxx";
+  src: url(../fonts/xxxxxxx-bold);
+  font-weight: 700;
+}
+
+
+
+
+/* *,
+*::after,
+*::before {
+  box-sizing: border-box;
+}  */
+
+  body {
+  
+  }
+
+
+h1 {
+  font-family: "comma-sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5em;
+  color: rgb(149, 86, 97);
+  letter-spacing: 1%;
+  margin-left: 80px;
+  justify-content: end;
+}
+
+h2 {
+  font-family: comma-sans;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: rgb(5, 0, 1);
+  letter-spacing: 0.01em;
+}
+
+h3 {
+  font-family: "kuhlman-vf", sans-serif;
+  /* font-variation-settings: "SEED" 0, "wdth" 100; */
+  font-weight: 400;
+  font-size: 1.5em;
+  color: rgb(149, 86, 97);
+  letter-spacing: 0.05em;
+  margin-left: 80px;
+}
+
+p {
   font-family: comma-sans;
   font-size: 1em;
-  color: rgb(149, 86, 97);
-  letter-spacing: 0.1em;
-  margin-left: 80px;
-  background-color: pink;
-  padding: 20px;
+  /* color: rgb(149, 86, 97); */
+  letter-spacing: 0.05em;
+  /* background-color: pink; */
+}
+
+/*********************
+Top Navivigatie
+*********************/
+
+header {
 
 }
+
+ul {
+  position:relative;
+  margin:0;
+  padding:1em;
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+}
+
+.ulnavi {
+position:relative;
+  margin:0;
+  padding:1em;
+  list-style:none;
+}
+
+.linav{ 
+font-size: 2em;
+
+}
+
+
+/*********************
+Top Navigatie
+*********************/
+
+
+
+
+
+
+/*********************
+Top 2 top columns
+*********************/
+
+
+.top2columns {
+  display: flex;
+    flex-direction: row;
+    gap: 40px;
+    background-color: rgb(201, 172, 172);
+}
+
+.topleft {
+  flex: 1;
+  background-color: yellow;
+}
+
+  .topleft img, .toprechts img{
+ width: 50%;
+  }
+
+.toprechts {
+    flex: 1;
+  background-color: rgb(118, 218, 165);
+}
+
+
+
+
+
 
 
 
@@ -36,9 +143,9 @@ h1{
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+  /* startje */
+  --color-text: #111;
+  --color-background: #eee;
 }
 
 
