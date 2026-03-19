@@ -15,41 +15,40 @@
   font-weight: 700;
 }
 
-
-
-
-/* *,
+*,
 *::after,
 *::before {
   box-sizing: border-box;
-}  */
+  margin:0;
+  padding:0em;
+} 
 
-  body {
-  
-  }
+/**************/
+/* ALGEMENE CSS instellingen */
+/**************/
 
 
 h1 {
-  font-family: "comma-sans", sans-serif;
-  font-weight: 700;
+  font-family: "tonos", sans-serif;
+  font-weight: 400;
   font-style: normal;
   font-size: 2.5em;
   color: rgb(149, 86, 97);
   letter-spacing: 1%;
-  margin-left: 80px;
   justify-content: end;
 }
 
 h2 {
-  font-family: comma-sans;
-  font-size: 2em;
+  font-family: "tonos", sans-serif;
+  font-size: 1.5em;
+  line-height: 1em;
   text-transform: uppercase;
   color: rgb(5, 0, 1);
   letter-spacing: 0.01em;
 }
 
 h3 {
-  font-family: "kuhlman-vf", sans-serif;
+  font-family: "tonos", sans-serif;
   /* font-variation-settings: "SEED" 0, "wdth" 100; */
   font-weight: 400;
   font-size: 1.5em;
@@ -59,83 +58,180 @@ h3 {
 }
 
 p {
-  font-family: comma-sans;
+  font-family: "tonos", sans-serif;
   font-size: 1em;
+  line-height:1.4em;
+  padding-bottom: 0.5em;
   /* color: rgb(149, 86, 97); */
-  letter-spacing: 0.05em;
+  letter-spacing: 0.01em;
   /* background-color: pink; */
 }
 
+
 /*********************
-Top Navivigatie
+Navigatie
 *********************/
 
-header {
+nav {
+  font-family: "comma-sans", sans-serif;
+  background-color: rgb(189, 176, 237);
 
 }
 
-ul {
+.ulnavi {
+  display: flex;
+  list-style:none;
+  z-index: 1;
+  /* grid-area: header; 
+  position:relative; wat draagt dit bij?!?!?*/
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: rgb(189, 176, 237);
+  justify-content: end;
+  height: 5rem;
+  position: fixed;
+  width: 100%;
+  padding:1em;
+}
+
+.linavi{ 
+font-size: 1em;  
+}
+
+
+/*********************
+Top 2 columns
+*********************/
+
+.top2columns {
+  display: flex;
+  flex-direction: row;
+  max-height: 85vh;
+  padding-top: 5rem;
+  /* gap: 8px; */
+}
+
+main {
+  flex: 1;
+  background-color: rgb(245, 245, 175);
+  overflow-y: auto;
+  padding:1em;
+  border: 0.3px solid black;
+
+}
+
+/* Chrome, Safari scrollbar niet zichtbaar*/
+main::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+main img {
+ width: 100%;
+ padding: 1em 0 1em 0;
+  }
+
+.circel { /*ik wil een ronddraaiende cirkel*/
+  position: absolute;
+  top:6em;
+  right: 3em;
+  text-align: center;
+  background-color: rgb(88, 129, 100);
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+  z-index: 10; /*dat vind ik nog moeilijk, waarom 10 ?!?!?!*/
+}
+
+.highlights {
+  flex: 1;
+  background-color: rgb(118, 218, 165);
+  overflow-y: auto;
+}
+
+.highlights li {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  border: 0.3px solid black;
+  padding: 1em;
+
+}
+
+.highlights h2 {
+  grid-column: 1 / -1;
+  margin-top: 1em;
+
+}
+
+.highlights li img {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
+
+.highlights li p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+}
+/*********************
+Portfolio section
+*********************/
+
+.portfolio{
+  display: grid; 
+  grid-template-columns: repeat( auto-fit, minmax(min(20em, 100%), 1fr) );
+  /* grid-column-gap: 8px; 
+  grid-row-gap: 8px;
+  background-color: rgba(248, 195, 221, 0.916); */
+
+  /* grid-auto-flow: dense; wat betekent dense?!?!*/
+}
+
+.portfolio ul { 
+  display: flex;
+  justify-content: start;
   position:relative;
   margin:0;
   padding:1em;
   list-style: none;
-  display: flex;
-  justify-content: end;
-  gap: 30px;
-}
-
-.ulnavi {
-position:relative;
-  margin:0;
-  padding:1em;
   list-style:none;
 }
 
-.linav{ 
-font-size: 2em;
+article {  
+  border: 0.3px solid black;
+  background-color: white;
+  padding: 1em;
+} 
 
+article:first-child { 
+  /* dit is het blokje met de filters */
+  grid-column: 1 / -1;
+  background-color: gold;
+  margin: 0px;
+  padding:4em 0em 1em 1em;
 }
 
-
-/*********************
-Top Navigatie
-*********************/
-
-
-
-
-
-
-/*********************
-Top 2 top columns
-*********************/
-
-
-.top2columns {
-  display: flex;
-    flex-direction: row;
-    gap: 40px;
-    background-color: rgb(201, 172, 172);
+article:first-child ul{
+  font-family: "tonos", sans-serif;
+  text-align: left;
+  padding: 0;
+  gap: 2em;
+  border: none;
 }
 
-.topleft {
-  flex: 1;
-  background-color: yellow;
+label {
+  font:
+    1rem "Fira Sans",
+    sans-serif;
 }
 
-  .topleft img, .toprechts img{
- width: 50%;
-  }
-
-.toprechts {
-    flex: 1;
-  background-color: rgb(118, 218, 165);
+input {
+  margin: 0.4rem;
 }
-
-
-
-
-
 
 
 
@@ -158,6 +254,17 @@ Top 2 top columns
 
 /* font via Adbobe Fonts */
 /*
+
+Tonos Regular
+font-family: "tonos", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Tonos Bold
+font-family: "tonos", sans-serif;
+font-weight: 700;
+font-style: normal;
+
 Legitima
 font-family: "legitima", serif;
 font-weight: 500;
