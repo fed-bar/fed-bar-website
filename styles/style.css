@@ -24,6 +24,7 @@
     url("https://db.onlinewebfonts.com/t/fdfb17b36646fea824cba4309642c59f.ttf")format("truetype"),
     url("https://db.onlinewebfonts.com/t/fdfb17b36646fea824cba4309642c59f.svg#AUTHENTIC Sans Condensed 90")format("svg");
 }
+
 *,
 *::after,
 *::before {
@@ -35,133 +36,141 @@
 /**************/
 /* ALGEMENE CSS instellingen */
 /**************/
-
+  
+body {
+  background: linear-gradient(to right,rgb(245, 245, 175) 50%, rgb(118, 218, 165) 50%);
+}
 
 h1 {
   font-family: "AUTHENTIC Sans Condensed 90";
   font-weight: 500;
-  font-style: normal;
-  font-size: 2.8em;
-  color: black;
+  font-size: 3em;
+  line-height: 1em;
   letter-spacing: 1%;
-  justify-content: end;
+  padding-bottom: 0.5em;
 }
 
 h2 {
   font-family: "tonos", sans-serif;
+  font-weight: 400;
   font-size: 1.5em;
-  line-height: 1em;
-  text-transform: uppercase;
-  color: rgb(5, 0, 1);
-  letter-spacing: 0.01em;
-  margin: 0;
 }
 
 h3 {
   font-family: "tonos", sans-serif;
-  /* font-variation-settings: "SEED" 0, "wdth" 100; */
-  font-weight: 400;
   font-size: 1.5em;
-  color: rgb(149, 86, 97);
-  letter-spacing: 0.05em;
-  margin-left: 80px;
+  line-height: 1em;
+  text-transform: uppercase;
+  padding-bottom: 0.5em;
+  text-box: trim-both cap alphabetic;
 }
 
 p {
   font-family: "tonos", sans-serif;
-  font-size: 1em;
   line-height:1.4em;
-  padding-bottom: 0.5em;
-  /* color: rgb(149, 86, 97); */
-  letter-spacing: 0.01em;
-  /* background-color: pink; */
+  padding-bottom: 0.8em;
 }
+
+img {
+  max-width: 100%;
+}
+
 
 
 /*********************
 Navigatie
 *********************/
-
 nav {
-  font-family: "comma-sans", sans-serif;
-  background-color: rgb(189, 176, 237);
-}
-
-.ulnavi {
-  display: flex;
-  list-style: none;
+  background: linear-gradient(to right,rgb(245, 245, 175) 50%, rgb(118, 218, 165) 50%);
+  position: sticky;
+  top: 0;
   z-index: 1;
-  /* grid-area: header; 
-  position:relative; wat draagt dit bij?!?!?*/
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  background-color: rgb(189, 176, 237);
-  justify-content: end;
-  width: 100%;
-  height: 5rem;
-  position: fixed;
-  padding:1em;
 }
 
-.linavi{ 
-font-size: 1em;  
+.navigation {
+  font-family: "comma-sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;  
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1em;
+  height: 5rem;
+  padding-right:2em;
+  border-bottom: 0.5px solid black;
+  list-style: none;
 }
 
 
 /*********************
-Top 2 columns
+Main section = 2 split columns en een portfolio section
 *********************/
 
-.top2columns {
+main {
   display: flex;
   flex-direction: row;
-  padding-top: 5em;
-  height: 85vh;
-  /* gap: 8px; */
+  flex-wrap: wrap;
+  background-color: rgb(245, 245, 175);
 }
 
-main {
-  flex: 1;
-  background-color: rgb(245, 245, 175);
-  overflow-y: auto;
-  padding:1em;
-  border: 0.3px solid black;
+section {
+    border: 0.3px solid black;
 }
 
 /* Chrome, Safari scrollbar niet zichtbaar*/
-main::-webkit-scrollbar {
+main::-webkit-scrollbar,
+.introduction::-webkit-scrollbar,
+.highlights::-webkit-scrollbar {
   display: none;
   scrollbar-width: none; /* Firefox */
 }
 
-main img {
+.introduction img {
  width: 100%;
- padding: 1em 0 1em 0;
-  }
-
-.circel { /*ik wil een ronddraaiende cirkel*/
-  position: absolute;
-  top:6em;
-  right: 3em;
-  text-align: center;
-  background-color: rgb(189, 248, 207);
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  transform: rotate(45deg);
-  z-index: 0; /*dat vind ik nog moeilijk, waarom 10 ?!?!?!*/
+ padding-top: 1em;
 }
 
-.circel img {
-  width: 85px;
-  padding-top: 20px;
+.introduction {
+  flex: 0 0 50%;
+  height: 80vh;
+  background-color: rgb(245, 245, 175);
+  overflow-y: auto;
+  padding: 1.5em;
 }
 
 .highlights {
-  flex: 1;
+  flex: 0 0 50%;
+  height: 80vh;
   background-color: rgb(118, 218, 165);
   overflow-y: auto;
+  /* position: relative; */
+}
+
+.highlights ul {
+  margin-top: -120px;
+}
+
+.portfolio {
+  flex: 0 0 100%;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 1em;
+  margin-left: 70%;
+  background-color: rgb(189, 248, 207);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; 
+  transform: rotate(40deg);
+  z-index: 0;
+}
+
+.circle img {
+  width: 95px;
 }
 
 .highlights li {
@@ -170,12 +179,11 @@ main img {
   grid-template-rows: auto auto;
   gap: 10px;
   border: 0.3px solid black;
-  padding: 1em;
+  padding: 1.5em;
 }
 
 .highlights h2 {
   grid-column: 1 / -1;
-  margin-top: 1em;
 }
 
 .highlights li img {
@@ -195,40 +203,64 @@ Portfolio section
 *********************/
 
 .portfolio {
-  /* display: grid-lanes;
-  grid-template-columns: repeat( auto-fit, minmax(min(250px, 100%), 1fr) );
-  gap: 16px; */
-  display: grid; 
+  display: grid-lanes; 
   grid-template-columns: repeat( auto-fit, minmax(min(20em, 100%), 1fr) );
+  background-color: white;
+  border: 0.3px solid black;
+}
+
+.portfolio div {
+  display: flex;
+  position: sticky;
+  top: 100px;
+  z-index: 1;
+  justify-content: start;
+}
+
+.filters {
+  display: flex;
+  grid-column: 1 / -1; 
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;   /* zorgt dat he filter responsive afbreekt */
+  margin: 1em;
+  gap: 1em;
+  list-style: none;
 }
 
 article {  
-border: 0.3px solid black;
-background-color: white;
-padding: 1.5em 1em 1em;
+  border: 0.3px solid black;
+  background-color: white;
+  padding: 1.5em 1.5em 2em;
 } 
 
-article:first-child { 
-  /* dit is het blokje met de filters */
-  grid-column: 1 / -1; 
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  position:relative;
-  gap: 1em;
+article img {
+  width: 100%;
+}
+
+article li {
+  font-family: "tonos", sans-serif;
+  display: inline-block;
+  font-size: 0.5em;
   list-style: none;
-  } 
+  border: 0.3px solid rgb(96, 92, 92);
+  border-radius: 20px;
+  padding: 0.3em 1em 0.3em 1em;
+  text-align: center;
+}
 
   label {
   font-family: "tonos", sans-serif;
-  font-size: 1em;
+  font-size: 0.8em;
+  color: black;
   display: block;
   position: relative;
   cursor: pointer;
-  background-color: #67495c;
-  border-radius: 20px;;
+  border: 0.3px solid rgb(96, 92, 92);
+  background-color: white;
+  border-radius: 20px;
   padding: 0.3em 1em 0.1em 1em;
-  color: white;
+  white-space: nowrap;   /* dit zorgt ervoor dat de 2 woorden in een filter niet afbreken */
   }
 
   .container input {
@@ -239,66 +271,94 @@ article:first-child {
 
   label:has(input:checked) {
   background-color: #f2106e;
+  color: white;
   }
- 
-/*
-.portfolio ul { 
-  display: flex;
-  justify-content: start;
-  position:relative;
-  list-style: none;
-  list-style:none;
+
+   /* verberg de artikelen die 'hebben' een check'  */
+.portfolio:has(input:checked) article {
+  display: none;
 }
 
-/* article:first-child ul{ */
-  /* font-family: "tonos", sans-serif;
-  background: rgb(243, 231, 54);
-  text-align: left;
-  padding: 0;
-  gap: 2em;
-  border: none; 
-  gap:1em;
-}
-
-article:first-child li{
-  font-family: "tonos", sans-serif;
+   /* toon de artikelen die 'hebben' een check bij (specifiek filter)  */
+.portfolio:has(#webanimation:checked) article.webanimation,
+.portfolio:has(#designart:checked) article.designart,
+.portfolio:has(#fashiondesign:checked) article.fashiondesign,
+.portfolio:has(#weaving:checked) article.weaving {
   display: block;
-  position: relative;
-  text-align: center;
-  padding: 0.4em 1em 0.1em 1em;
-  /* aspect-ratio: 1; Dit snap ik niet goed*/ 
-  /* color: white;
-  background-color: black;
-  border-radius: 1.5em;
 }
 
-  */
 
 
 /*********************
 Footer
 *********************/
 footer {
-  font-family: "AUTHENTIC Sans Condensed 90";
+  overflow: clip;
   background-color: darkgoldenrod;
-  text-align: center;
-  font-size: 1.8em;
   Padding:0.8em;
 }
 
+.scrollfooter {
+  font-family: "AUTHENTIC Sans Condensed 90";
+  font-size: 1.8em;
+  letter-spacing: 1%;
+  display: block;
+  white-space: nowrap;
+  animation: scrollText 40s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { 
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+
+} 
 
 
-/*********************
+/***************************************************************************/
+/* STYLING PAGINA 2 */
+/***************************************************************************/
+
+.page {
+  flex: 0 0 50%;
+  background-color: rgb(118, 218, 165) 50%;
+  overflow-y: auto;
+  border: 0.3px solid black;
+  padding: 1em;
+}
+
+.picture {
+  flex: 0 0 50%;
+  padding: 1em 0 1em 0;
+}
+
+.picture img {
+width: 100%;
+}
+
+
+/*************************************************
 MEDIA QUERY – Breakpoints
-*********************/
+***************************************************/
  @media ( width<45em ) { 
 	
-.top2columns {
+body {
+  min-width: 200px;
+}
+  
+main {
   flex-direction: column;
   height: auto;
 }
 
-main {
+.navigation { 
+  background-color: rgb(245, 245, 175);
+} 
+
+.introduction {
   overflow-y: visible;
   }
 
@@ -313,6 +373,34 @@ overflow-y: visible;
 }
 
 
+@media ( width>100em ) { 
+
+main {
+  max-width: 100em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  width: 100em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  width: 100em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.3px solid black;
+  border-bottom-style: hidden;
+
+}
+}
+
+
+
+
+
 
 /*********************/
 /* CUSTOM PROPERTIES */
@@ -322,7 +410,6 @@ overflow-y: visible;
   --color-text: #111;
   --color-background: #eee;
 }
-
 
 
 
