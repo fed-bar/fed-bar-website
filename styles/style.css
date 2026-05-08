@@ -1,7 +1,50 @@
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+	/* KLEUREN */
+	--color-text: #111;
+  --color-background: #eee;
+  
+  /* de standaard half-half gradient */
+	--bg-gradient:
+		linear-gradient(90deg, var(--brand-color-primary) 50%, var(--brand-color-secondary) 0);
+
+  /* zodat zowel de lichte als donkere stylesheet van de browser gebruikt wordt (setting in het OS) */
+	color-scheme:light dark;
+	
+	/* de lichte basiskleuren - tokens */
+	--brand-color-primary:rgb(189, 248, 207);
+	--brand-color-secondary:rgb(245, 245, 175);
+	--brand-color-tertiary:white;
+	
+	/* de donkere basiskleuren - tokens */
+	@media (prefers-color-scheme:dark) {
+		--brand-color-primary: rgb(66, 88, 77);
+		--brand-color-secondary:rgb(191, 151, 6);
+		--brand-color-tertiary:rgb(64, 64, 94);
+	}
+  /* half transparant */
+	--bg-gradient-translucent:
+		linear-gradient(
+			90deg, 
+			color-mix(var(--brand-color-primary), transparent) 50%,
+			color-mix(var(--brand-color-secondary), transparent) 0
+		);
+
+/* MATEN */
+	--max-width:80em;
+	--witruimte:0.5em;
+	
+	@media (width > 40em) { 
+		--witruimte:1em;
+	}
+}
 /**************/
 /* CSS REMEDY */
 /**************/
-
 
 @font-face {
   font-family: "xxxx";
@@ -32,20 +75,24 @@
   margin:0;
   padding:0em;
 } 
+img {
+	max-width:100%;
+}
 
 /**************/
 /* ALGEMENE CSS instellingen */
 /**************/
   
 body {
-  background: linear-gradient(to right,rgb(245, 245, 175) 50%, rgb(118, 218, 165) 50%);
+  background-image:var(--bg-gradient);
+  /* background: linear-gradient(to right,rgb(245, 245, 175) 50%, rgb(118, 218, 165) 50%); */
 }
 
 h1 {
   font-family: "AUTHENTIC Sans Condensed 90";
   font-weight: 500;
-  font-size: 3em;
-  line-height: 1em;
+  font-size: 4em;
+  line-height: 1.3em;
   letter-spacing: 1%;
   padding-bottom: 0.5em;
 }
@@ -76,12 +123,11 @@ img {
 }
 
 
-
 /*********************
 Navigatie
 *********************/
 nav {
-  background: linear-gradient(to right,rgb(245, 245, 175) 50%, rgb(118, 218, 165) 50%);
+  background-image: var(--bg-gradient);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -110,11 +156,11 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: rgb(245, 245, 175);
+  background-color: var(--brand-color-primary);
 }
 
 section {
-    border: 0.3px solid black;
+  border: 0.3px solid black;
 }
 
 /* Chrome, Safari scrollbar niet zichtbaar*/
@@ -133,7 +179,7 @@ main::-webkit-scrollbar,
 .introduction {
   flex: 0 0 50%;
   height: 80vh;
-  background-color: rgb(245, 245, 175);
+  background-color: var(--brand-color-primary);
   overflow-y: auto;
   padding: 1.5em;
 }
@@ -141,9 +187,8 @@ main::-webkit-scrollbar,
 .highlights {
   flex: 0 0 50%;
   height: 80vh;
-  background-color: rgb(118, 218, 165);
+  background-color: var(--brand-color-secondary);
   overflow-y: auto;
-  /* position: relative; */
 }
 
 .highlights ul {
@@ -161,7 +206,7 @@ main::-webkit-scrollbar,
   position: sticky;
   top: 1em;
   margin-left: 70%;
-  background-color: rgb(189, 248, 207);
+  background-color: white;
   width: 120px;
   height: 120px;
   border-radius: 50%; 
@@ -205,7 +250,7 @@ Portfolio section
 .portfolio {
   display: grid-lanes; 
   grid-template-columns: repeat( auto-fit, minmax(min(20em, 100%), 1fr) );
-  background-color: white;
+  background-color: var(--brand-color-tertiary);
   border: 0.3px solid black;
 }
 
@@ -222,7 +267,7 @@ Portfolio section
   grid-column: 1 / -1; 
   justify-content: start;
   align-items: center;
-  flex-wrap: wrap;   /* zorgt dat he filter responsive afbreekt */
+  flex-wrap: wrap;   /* zorgt dat het filter responsive afbreekt */
   margin: 1em;
   gap: 1em;
   list-style: none;
@@ -230,7 +275,7 @@ Portfolio section
 
 article {  
   border: 0.3px solid black;
-  background-color: white;
+  background-color: var(--brand-color-tertiary);
   padding: 1.5em 1.5em 2em;
 } 
 
@@ -324,39 +369,115 @@ footer {
 
 .page {
   flex: 0 0 50%;
-  background-color: rgb(118, 218, 165) 50%;
+  position:relative;
+  background-color: var(--brand-color-primary);
   overflow-y: auto;
   border: 0.3px solid black;
   padding: 1em;
 }
 
+.staart {
+  position: absolute;  /* losse laag */
+  top: -60px;          /* afstand van boven */
+  left: 200px;         /* afstand van links */
+  background-image: url(../images/kat_02.svg);
+  background-repeat: no-repeat;
+  transform: rotate(-45deg);
+  transform-origin: top center; /* draaipunt bovenaan */
+  transition: top 0.3s ease, transform 0.4s ease; /* ← animatie */
+  padding: 20px;
+  width: 140px;
+  height: 160px;
+  z-index: 1;
+}
+
+.staart:hover {
+  background-image: url(../images/kat_02.svg);
+  top: -5px;
+  transform: rotate(-1deg);
+  animation: wiebel 1s ease 0.4s 1 alternate; /* ← start na de transitie */
+}
+
+@keyframes wiebel {
+  50%  { transform: rotate(-8deg); }
+  75%  { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.staart.gevallen {
+  background-image: url(../images/kat_03.svg);
+  top: 120%;        /* kat valt uit scherm met JavaScript*/
+  transform: rotate(20deg);
+  animation: vallen 2s ease-in forwards; /* forwards = blijft op laatste keyframe */
+  /* transition: top 1.5s ease-in, transform 1s ease-in; */
+}
+
+@keyframes vallen {
+  0% {
+    top: -5px;
+    transform: rotate(0deg) scale(1.2);  /* groter aan het begin */
+  }
+  100% {
+    top: 120%;
+    transform: rotate(360deg) scale(0.6); /* kleiner en gedraaid onderaan */
+  }
+}
+
 .picture {
   flex: 0 0 50%;
-  padding: 1em 0 1em 0;
+  padding: 0em 0 1em 0;
 }
 
 .picture img {
 width: 100%;
 }
 
+/***************************************************************************/
+/* STYLING PAGINA hi */
+/***************************************************************************/
+/* The flexbox items (in the container) */
+.h {
+font-family: "libre-bodoni", sans-serif;
+font-weight: 700;
+font-size: 60em;
+color: black;
+background-color: 
+#ca96ac;
+translate: 35px 5px;
+margin: 0;
+padding: 0;
+}
+
+.i {
+width: 133px;
+height: 133px;
+color: white;
+font-family: sans-serif;
+background-color: black; 
+translate: 392px -930px;
+border-radius: 20em;
+z-index: 1;
+}
+
 
 /*************************************************
 MEDIA QUERY – Breakpoints
 ***************************************************/
- @media ( width<45em ) { 
-	
+ @media ( width<40em ) { 
+	 
 body {
   min-width: 200px;
 }
-  
+ 
+nav {
+    background-image: none;
+    background-color: var(--brand-color-primary);
+  }
+
 main {
   flex-direction: column;
   height: auto;
 }
-
-.navigation { 
-  background-color: rgb(245, 245, 175);
-} 
 
 .introduction {
   overflow-y: visible;
@@ -373,22 +494,22 @@ overflow-y: visible;
 }
 
 
-@media ( width>100em ) { 
+@media ( width>80em ) { 
 
 main {
-  max-width: 100em;
+  max-width: 80em;
   margin-left: auto;
   margin-right: auto;
 }
 
 section {
-  width: 100em;
+  width: 80em;
   margin-left: auto;
   margin-right: auto;
 }
 
 nav {
-  width: 100em;
+  width: 80em;
   margin-left: auto;
   margin-right: auto;
   border: 0.3px solid black;
@@ -401,15 +522,6 @@ nav {
 
 
 
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-:root {
-  /* startje */
-  --color-text: #111;
-  --color-background: #eee;
-}
 
 
 
