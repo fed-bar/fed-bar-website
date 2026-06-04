@@ -3,16 +3,16 @@ console.log("Hallo Barbara");
 const cirkel = document.querySelector('.i');
 const letter = document.querySelector('.h');
 
-// Klik op de cirkel toggle de draai-animatie op de letter h
 cirkel.addEventListener('click', () => {
+  // Verwijder eerst (+ reflow) zodat animatie altijd herstart
+  letter.classList.remove('draaien');
+  void letter.offsetWidth;
+  letter.classList.add('draaien');
+});
 
-  if (letter.classList.contains('draaien')) {
-    // Tweede klik — verwijder class, basisanimatie hervat
+// Verwijder class zodra de draai-animatie klaar is
+letter.addEventListener('animationend', (e) => {
+  if (e.animationName === 'draai') {
     letter.classList.remove('draaien');
-  } else {
-    // Eerste klik — herstart en voeg class toe
-    letter.classList.remove('draaien');
-    void letter.offsetWidth; // forceer reflow zodat animatie herstart
-    letter.classList.add('draaien');
   }
 });

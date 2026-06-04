@@ -387,6 +387,16 @@ footer {
   padding: 1em;
 }
 
+.picture {
+  flex: 0 0 50%;
+  padding: 0em 0 1em 0;
+  background-color: var(--brand-color-secondary);
+}
+
+.picture img {
+width: 100%;
+}
+
 .staart {
   position: absolute;  /* losse laag */
   top: -60px;          /* afstand van boven */
@@ -434,20 +444,16 @@ footer {
   }
 }
 
-.picture {
-  flex: 0 0 50%;
-  padding: 0em 0 1em 0;
-  background-color: var(--brand-color-secondary);
-}
-
-.picture img {
-width: 100%;
-}
 
 /***************************************************************************/
 /* STYLING PAGINA hi */
 /***************************************************************************/
 
+.experiment {
+  flex: 0 0 50%;
+  /* padding: 0em 0 1em 0; */
+  background-color: var(--brand-color-secondary);
+}
 
 /* The flexbox items (in the container) */
 .h {
@@ -459,7 +465,6 @@ color: black;
 text-box: trim-both cap alphabetic;
 margin-top: 50px;
 --snelheid: 120s;
-animation: draai var(--snelheid) linear infinite, kleurwissel 120s ease infinite;
 }
 
 @keyframes draai {
@@ -476,7 +481,7 @@ animation: draai var(--snelheid) linear infinite, kleurwissel 120s ease infinite
 }
 
 .h.draaien {
-  animation: draai 4s ease forwards;
+animation: draai var(--snelheid) linear infinite, kleurwissel 120s ease infinite;
   color: #f2106e;
 }
 
